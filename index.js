@@ -483,16 +483,6 @@ bot.on('message', message => {
         }
 
     }
-        
-     else if(splitmessage[0] === "!say"){
-
-        if(splitmessage.length === 2){
-
-            var msg = splitmessage[1];
-
-            bot.channels.get('305345723472543745').send(msg);
-
-        }
     // erreur commande inconue
     else{
 
