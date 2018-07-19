@@ -12,7 +12,7 @@ bot.on('ready', () => {
 
     console.log(good);
 
-    bot.user.setActivity('!info');
+    //bot.user.setActivity('!info');
 
     bot.channels.get('469463455154438165').send(`Je suis connecté ! :grin:`);
 
