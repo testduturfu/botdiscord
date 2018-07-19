@@ -8,10 +8,6 @@ const PREFIX = "!";
 
 const good = "Opération effectuée";
 
-
-
-
-
 bot.on('ready', () => {
 
     console.log(good);
@@ -23,8 +19,6 @@ bot.on('ready', () => {
     console.log(bot.user)
 
 });
-
-bot.login(process.env.BOT_TOKEN);
 
 bot.on('guildMemberAdd', member => {
 
@@ -507,3 +501,5 @@ bot.on('message', message => {
             console.log("error");
     }
 }});
+
+bot.login(process.env.BOT_TOKEN);
