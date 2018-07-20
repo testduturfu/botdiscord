@@ -29,7 +29,7 @@ bot.on('guildMemberAdd', member => {
 
         let role = member.guild.roles.find('name', 'Assemblée');
 
-        bot.channels.get('195917192800239626').send(`Bienvenue sur Ritara, ${member}. Merci davoir rejoins. Bon jeu a toi !`);
+        bot.channels.get('195917192800239626').send(`Bienvenue sur Ritara, ${member}. Merci de nous avoir rejoins. Bon jeu a toi ! :wink: `);
 
         member.addRole(role);
 
