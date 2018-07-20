@@ -472,7 +472,7 @@ bot.on('message', message => {
 
                 .setTitle('**ERREUR**')
 
-                .addField("Il s'emblerait que Carlos rencontre un problème !", "Vous n'avez pas specifié assez de parametre, Tips : n'oublier pas de séparer vaut parametre avec : **\'  /  \'** ")
+                .addField("Il s'emblerait que Carlos rencontre un problème !", "Vous n'avez pas specifié assez de paramètres, Tips : n'oublier pas de séparer vos paramètres avec : **\'  /  \'** ")
                 
                 .setThumbnail("https://image.noelshack.com/fichiers/2018/29/4/1532001002-erreur.png");
 
@@ -483,6 +483,37 @@ bot.on('message', message => {
         }
 
     }
+
+    else if(splitmessage[0] === '!say'){
+        
+        if(splitmessage.length === 2){
+
+            var msg = splitmessage[1]
+
+            bot.channels.get('305345723472543745').send(msg);
+
+        }
+
+        else{
+
+            let erreur = new Discord.RichEmbed()
+
+                .setColor("#960d0d")
+
+                .setTitle('**ERREUR**')
+
+                .addField("Il s'emblerait que Carlos rencontre un problème !", "Vous n'avez pas specifié assez de paramètres, Tips : n'oublier pas de séparer vos paramètres avec : **\'  /  \'** ")
+                
+                .setThumbnail("https://image.noelshack.com/fichiers/2018/29/4/1532001002-erreur.png");
+
+                return message.channel.send(erreur); 
+
+                console.log("error");
+
+        }
+
+    }
+
     // erreur commande inconue
     else{
 
@@ -500,6 +531,33 @@ bot.on('message', message => {
 
             console.log("error");
     }
-}});
+    
+    
+}
+
+var role = message.member.highestRole
+
+    if(message.channel.id === '348071630309949440' && message.author.id != bot.user.id){
+
+        console.log(role.name)
+
+        if(role.name != 'President'){
+
+            if(role.name != "Sodomite"){
+
+                if(role.name != "Ministres"){
+
+                    console.log('je peux repondre')
+
+                    message.channel.send(`${message.member} Ta demande va etre prise en compte !`);
+
+                    bot.channels.get('305345723472543745').send(`${message.member} A deposer un message dans le salon ${message.channel} !`);
+                }
+            }
+        }
+    }
+
+
+});
 
 bot.login(process.env.BOT_TOKEN);
